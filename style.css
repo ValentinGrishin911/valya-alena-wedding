@@ -1,0 +1,964 @@
+/* Подключаем шрифт один раз в самом верху */
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Блоки встанут друг под другом */
+    align-items: center;
+    background-color: #ffffff;
+    font-family: 'Neucha', cursive;
+}
+
+/* СТИЛИ НОВОГО БЛОКА: Познакомьтесь с нами */
+/* ОБНОВЛЕННЫЕ СТИЛИ БЛОКА: Познакомьтесь с нами */
+.about-us-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px 0px 20px;
+    color: #2c3954; /* Темно-синий цвет текста */
+    text-align: center;
+}
+
+.about-title {
+    font-size: 52px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-weight: normal;
+    font-family: 'Neucha', cursive;
+}
+
+/* Контейнер для двух полароидов */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Общие настройки полароидов */
+.about-card {
+    max-width: 250px;
+    background-color: white;
+    padding: 15px 15px 30px 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    /* Точка, вокруг которой происходит вращение (верхний центр) */
+    transform-origin: top center; 
+}
+
+.polaroid-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.polaroid-text {
+    font-family: 'Neucha', cursive;
+    font-size: 30px;
+    color: #2c3954;
+    margin-top: 15px;
+    font-weight: normal;
+}
+
+/* --- СТИЛИ ДЛЯ ВАЛИ (Наклон влево) --- */
+.valya-card {
+    animation: swayValya 6s ease-in-out infinite !important;
+    animation-delay: -1.5s; 
+}
+
+/* Анимация для Вали: покачивание влево (отрицательные градусы) */
+@keyframes swayValya {
+    0%, 100% { transform: rotate(-10deg) translateY(0px); }
+    50% { transform: rotate(-14deg) translateY(-5px); }
+}
+
+/* --- СТИЛИ ДЛЯ АЛЁНЫ (Наклон вправо и сдвиг вниз) --- */
+.alyona-card {
+    animation: swayAlyona 7s ease-in-out infinite !important; 
+    animation-delay: -3.5s;
+}
+
+/* Анимация для Алёны: покачивание вправо (положительные градусы) 
+   и сдвиг вниз (translateY(40px)), чтобы она висела ниже левой */
+@keyframes swayAlyona {
+    0%, 100% { transform: rotate(15deg) translateY(40px); }
+    50% { transform: rotate(19deg) translateY(35px); }
+}
+
+/* СТИЛИ ПЕРВОГО БЛОКА */
+.wedding-love-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #2c3954;
+    padding: 20px 20px 0px 20px; 
+    text-align: center;
+    /* Уменьшили высоту блока, чтобы он не выталкивал фото слишком далеко */
+    min-height: 50vh; 
+}
+
+.wedding-names {
+    font-size: 56px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.wedding-equals { font-size: 56px; margin-bottom: 30px; }
+
+.wedding-heart {
+    width: 150px;
+    height: auto;
+    animation: sway 3s ease-in-out infinite;
+}
+
+.about-day-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px 40px 20px; /* Сверху 0, снизу 40px */
+    color: #2c3954;
+    text-align: center;
+}
+
+/* СТИЛИ ВТОРОГО БЛОКА (ПОЛАРОИД) */
+.polaroid-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Убрали верхний отступ (был 40px, стал 0) */
+    padding: 0px 20px 40px 20px; 
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.star-decoration {
+    position: absolute;
+    top: -10px; /* Немного приподняли */
+    right: calc(50% - 250px); /* Центрируем относительно карточки */
+    width: 45px;
+    height: 45px;
+    z-index: 2;
+    animation: swayStar 4s ease-in-out infinite;
+}
+
+.polaroid-card {
+    background-color: #ffffff;
+    padding: 15px 15px 25px 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 380px;
+    width: 100%;
+    animation: swayCard 5s ease-in-out infinite;
+}
+
+.polaroid-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.polaroid-text {
+    font-size: 26px;
+    color: #485c7b;
+    text-align: center;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+/* СТИЛИ ТРЕТЬЕГО БЛОКА (уменьшены отступы) */
+.invitation-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px 40px 20px; /* Сверху 0, снизу 40px */
+    color: #2c3954;
+    text-align: center;
+}
+
+.details-title {
+    font-size: 52px;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.details-text {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    max-width: 450px;
+}
+
+/* Контейнер для даты и овала */
+.date-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 130px;
+}
+
+.date-oval-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.date-text {
+    font-size: 56px;
+    z-index: 2;
+    position: relative;
+    padding-top: 5px; /* Легкая коррекция центра */
+}
+
+/* СТИЛИ ЧЕТВЕРТОГО БЛОКА (ПРОГРАММА ДНЯ) */
+.program-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px 20px 20px; /* Отступы для отделения от предыдущего блока */
+    color: #2c3954;
+    text-align: center;
+}
+
+.program-title {
+    font-size: 52px;
+    margin-bottom: 50px;
+    font-weight: normal;
+}
+
+/* Контейнер для списка программы */
+.program-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирует весь список по горизонтали */
+}
+
+/* Элемент программы (строка) */
+.program-item {
+    display: flex;
+    align-items: flex-start; /* Выравнивает время, звезду и контент по верхней линии */
+    justify-content: center; /* Центрирует элементы внутри строки */
+    width: 100%;
+    max-width: 650px; /* Ограничивает ширину списка */
+    margin-bottom: 35px; /* Расстояние между событиями */
+}
+
+/* Время (слева) */
+.item-time {
+    font-size: 36px;
+    color: #2c3954;
+    flex-basis: 90px; /* Фиксированная ширина для времени */
+    text-align: right;
+    margin-right: 25px; /* Отступ до звезды */
+    padding-top: 5px; /* Легкая коррекция по вертикали */
+}
+
+/* Звездочка (по центру) - добавлен твой код */
+.item-star {
+    width: 45px;
+    height: 45px;
+    margin-right: 25px; /* Отступ до контента */
+    /* Добавляем анимацию для покачивания, пульсации и мерцания */
+    animation: program-item-star-shimmer 2s ease-in-out infinite;
+}
+
+/* Контент события (справа) */
+.item-content {
+    flex: 1; /* Занимает оставшееся место */
+    text-align: left; /* Выравнивает тексты внутри по левому краю */
+}
+
+/* Название события (Welcome, Церемония, Банкет) */
+.event-name {
+    font-size: 36px;
+    color: #2c3954;
+    margin: 0;
+    font-weight: normal;
+    letter-spacing: 1.5px;
+}
+
+/* Описание события */
+.event-desc {
+    font-size: 20px;
+    color: #485c7b;
+    line-height: 1.4;
+    margin: 5px 0 0 0;
+}
+
+/* АНИМАЦИИ */
+@keyframes sway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+@keyframes swayStar {
+    0%, 100% { transform: rotate(10deg); }
+    50% { transform: rotate(25deg); }
+}
+
+@keyframes swayCard {
+    0%, 100% { transform: rotate(-3deg) translateY(0px); }
+    50% { transform: rotate(-1deg) translateY(-10px); }
+}
+
+/* АНИМАЦИЯ ЗВЕЗДОЧЕК ПРОГРАММЫ (Покачивание + Пульсация + Мерцание) */
+@keyframes program-item-star-shimmer {
+    0%, 100% {
+        transform: scale(1) rotate(0deg); /* Исходное состояние */
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05) rotate(3deg); /* Легкое пульсирование и покачивание */
+        opacity: 0.85; /* Легкое мерцание */
+    }
+}
+
+/* СТИЛИ ПЯТОГО БЛОКА (МЕСТО ПРОВЕДЕНИЯ) */
+.location-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px 100px 20px;
+    color: #2c3954;
+    text-align: center;
+}
+
+.location-title {
+    font-size: 52px;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+/* Настраиваем карточку места (используем уже готовые стили полароида) */
+.venue-card {
+    margin-bottom: 40px;
+}
+
+/* Текстовая информация об адресе */
+.location-info {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.location-info p {
+    margin: 5px 0;
+}
+
+/* Стили кнопки */
+.map-button {
+    display: inline-block;
+    background-color: #adc3d9; /* Нежно-голубой цвет со скриншота */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 40px;
+    font-size: 22px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(173, 195, 217, 0.4);
+}
+
+.map-button:hover {
+    background-color: #9db2c8;
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+/* СТИЛИ ШЕСТОГО БЛОКА (ДРЕСС-КОД) */
+.dress-code-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px 100px 20px;
+    color: #2c3954;
+    text-align: center;
+}
+
+.dress-code-title {
+    font-size: 52px;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.dress-code-text {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+/* Цветовая палитра */
+.color-palette-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.color-swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Скругляем до кругов */
+    margin: 0 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Определение цветов ( hex-коды приблизительные) */
+/* Цвета палитры (более точные, как на референсе) */
+.swatch-1 { background-color: #dcbca3; } /* Пудровый/бежевый */
+.swatch-2 { background-color: #e5dcb3; } /* Светло-желтый/песочный */
+.swatch-3 { background-color: #c4ccb7; } /* Фисташковый/светло-оливковый */
+.swatch-4 { background-color: #badcf0; } /* Нежно-голубой */
+.swatch-5 { background-color: #dcaac1; } /* Пыльно-розовый */
+.swatch-6 { background-color: #d8b7dd; } 
+
+/* Карусель фотографий-вдохновений */
+.dress-code-photo-frame {
+    /* Настраиваем рамку (как у venue-card, но без анимации покачивания) */
+    background-color: #ffffff;
+    padding: 15px 15px 25px 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 380px;
+    width: 100%;
+}
+
+.dress-code-photo-carousel {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 125%; /* Настраиваем пропорции (5:4) */
+    overflow: hidden; /* Прячем все, что выходит за рамку */
+}
+
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполняем область изображением */
+    opacity: 0; /* Изначально скрываем все изображения */
+    transition: opacity 1s ease-in-out; /* Эффект плавного переключения */
+    z-index: 1;
+}
+
+/* Класс для активного (видимого) изображения */
+.carousel-image.active {
+    opacity: 1;
+    z-index: 2; /* Поднимаем видимое изображение выше других */
+}
+
+/* Текст под фотографией */
+.dress-code-photo-frame .polaroid-text {
+    margin-top: 10px; /* Добавляем отступ */
+}
+
+/* Стили для стрелочек карусели */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px 15px;
+    user-select: none;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Тень, чтобы было видно на светлых фото */
+}
+
+.carousel-arrow:hover {
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.2); /* Легкое увеличение при наведении */
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+/* СТИЛИ ДЛЯ ПОЛНОЭКРАННОГО РЕЖИМА (LIGHTBOX) */
+.lightbox {
+    display: none; /* Скрыт по умолчанию */
+    position: fixed;
+    z-index: 9999; /* Поверх всего сайта */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Белый фон, как на скриншоте */
+}
+
+/* Класс для показа лайтбокса */
+.lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Полноэкранная картинка */
+#lightbox-img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1); /* Легкая тень для объема */
+}
+
+/* Кнопка закрытия (крестик) */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #2c3954;
+    cursor: pointer;
+    z-index: 10000;
+    transition: transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.2);
+}
+
+/* Стрелочки в полноэкранном режиме */
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #2c3954; /* Темно-синие стрелочки на белом фоне */
+    cursor: pointer;
+    z-index: 10000;
+    padding: 20px;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+.lightbox-arrow:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Делаем курсор-лупу на картинках в рамке, чтобы показать, что на них можно нажать */
+.carousel-image {
+    cursor: zoom-in;
+}
+
+/* СТИЛИ СЕДЬМОГО БЛОКА (ПОЖЕЛАНИЯ) */
+.wishes-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px 80px 20px;
+    color: #2c3954;
+    text-align: center;
+}
+
+.wishes-title {
+    font-size: 52px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+/* Настройки иконки с цветами */
+.wishes-icon {
+    width: 140px; /* Аккуратный размер, как на скриншоте */
+    height: auto;
+    margin-bottom: 10px;
+    /* Используем анимацию sway (покачивание), которую мы создали для сердечка */
+    animation: sway 4s ease-in-out infinite; 
+}
+
+/* Тексты пожеланий */
+.wishes-text {
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 550px;
+}
+
+/* Желтая линия-разделитель */
+.wishes-separator {
+    width: 80%;
+    max-width: 350px;
+    height: 20px;
+    margin: 35px 0; /* Отступы сверху и снизу от текста */
+}
+
+/* СТИЛИ ВОСЬМОГО БЛОКА (АНКЕТА ГОСТЯ) */
+.rsvp-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px 100px 20px;
+    color: #2c3954;
+}
+
+.rsvp-title {
+    font-size: 52px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.rsvp-text {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.rsvp-form {
+    width: 100%;
+    max-width: 450px; /* Ограничиваем ширину формы */
+    text-align: left; /* Текст формы по левому краю */
+}
+
+.form-group {
+    margin-bottom: 40px;
+}
+
+.input-label {
+    display: block;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Стилизация поля для текста (только нижняя линия) */
+input[type="text"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #2c3954;
+    background: transparent;
+    font-family: 'Neucha', cursive;
+    font-size: 22px;
+    color: #2c3954;
+    padding: 5px 0 10px 0;
+    outline: none;
+}
+
+/* Стилизация круглых кнопок выбора (радиокнопок) */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Прячем стандартный кружок браузера */
+.radio-label input[type="radio"] {
+    display: none;
+}
+
+/* Рисуем свой красивый кружок */
+.custom-radio {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #2c3954;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Точка внутри, когда вариант выбран */
+.radio-label input[type="radio"]:checked + .custom-radio::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #2c3954;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* --- СТИЛИ ДЛЯ ЧЕКБОКСОВ (Напитки) --- */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Прячем стандартный чекбокс браузера */
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+/* Рисуем свой квадратный чекбокс */
+.custom-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #2c3954;
+    border-radius: 3px; /* Делаем углы чуть скругленными */
+    margin-right: 15px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Квадратик внутри, когда вариант выбран */
+.checkbox-label input[type="checkbox"]:checked + .custom-checkbox::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #2c3954;
+    border-radius: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Кнопка "Отправить" */
+.submit-button {
+    display: block;
+    margin: 40px auto 0 auto;
+    background-color: #adc3d9;
+    color: #ffffff;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 40px;
+    font-size: 24px;
+    font-family: 'Neucha', cursive;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #9db2c8;
+    transform: scale(1.05);
+}
+
+.submit-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Сообщение после отправки */
+.form-message {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    color: #2c3954;
+}
+
+.form-message.hidden {
+    display: none;
+}
+
+/* СТИЛИ ДЕВЯТОГО БЛОКА (КОНТАКТЫ) */
+.contacts-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px 100px 20px; /* Большой отступ снизу, так как это конец сайта */
+    color: #2c3954;
+    text-align: center;
+}
+
+/* Обертка для заголовка, чтобы привязать к ней самолетик */
+.contacts-title-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.contacts-title {
+    font-size: 52px;
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Настройки самолетика */
+.contacts-icon {
+    position: absolute;
+    top: 5px;
+    right: -80px; /* Выносим за пределы текста */
+    width: 80px;
+    height: auto;
+    /* Легкая анимация полета */
+    animation: float-plane 4s ease-in-out infinite;
+}
+
+/* Анимация "парения" в воздухе */
+@keyframes float-plane {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(3deg); }
+}
+
+.contacts-text {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Стили для номера телефона */
+.contacts-phone {
+    font-size: 28px;
+    color: #2c3954;
+    text-decoration: none; /* Убираем стандартное подчеркивание ссылки */
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.contacts-phone:hover {
+    color: #adc3d9; /* Меняет цвет на голубой при наведении */
+    transform: scale(1.05); /* Слегка увеличивается */
+}
+
+/* СТИЛИ ДЕСЯТОГО БЛОКА (ФИНАЛ) */
+.final-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px 120px 20px; /* Увеличенный отступ, так как это абсолютный конец */
+    color: #2c3954;
+    text-align: center;
+}
+
+/* Сдвигаем заголовок чуть выше */
+.final-title {
+    font-size: 52px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+/* Настройки финального сердечка */
+.final-heart {
+    width: 130px; /* Чуть поменьше, чем в начале */
+    margin-bottom: 40px;
+    /* Применяем анимацию "покачивания" sway, которую мы создали для первого блока */
+    animation: sway 4s ease-in-out infinite; 
+}
+
+/* Настройки финальной карточки */
+.final-card {
+    /* Применяем анимацию swayCard, которую мы создали для блока с дресс-кодом/местом */
+    animation: swayCard 5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* Кнопка цветочной подписки */
+.wishes-button {
+    display: inline-block;
+    background-color: #adc3d9;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 40px;
+    font-size: 24px;
+    margin-top: 25px; /* Отступ от текста сверху */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(173, 195, 217, 0.4);
+    font-family: 'Neucha', cursive;
+}
+
+.wishes-button:hover {
+    background-color: #9db2c8;
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+/* АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ */
+@media (max-width: 640px) {
+    .cards-container {
+        flex-direction: row; /* Возвращаем карточки в один ряд */
+        gap: 15px; /* Делаем небольшое расстояние между ними */
+        align-items: flex-start; /* Выравниваем по верхнему краю */
+        justify-content: center;
+    }
+    .about-card {
+        max-width: 140px; /* Уменьшаем ширину, чтобы влезли обе */
+        padding: 8px 8px 15px 8px; /* Чуть уменьшаем белую рамку */
+    }
+    
+    /* Уменьшаем шрифт имен под фото, чтобы он влезал в узкую карточку */
+    .about-card .polaroid-text {
+        font-size: 16px; 
+        margin-top: 10px;
+    }
+    .about-title {
+        font-size: 38px;
+        margin-bottom: 30px;
+    }
+    
+    /* На мобильных немного уменьшим угол наклона для читаемости */
+    @keyframes swayLeft {
+        0%, 100% { transform: rotate(2deg) translateY(0px); }
+        50% { transform: rotate(4deg) translateY(-5px); }
+    }
+    @keyframes swayRight {
+        0%, 100% { transform: rotate(-4deg) translateY(0px); }
+        50% { transform: rotate(-2deg) translateY(-5px); }
+    }
+    .wedding-names { font-size: 42px; }
+    .wedding-heart { width: 100px; }
+    .polaroid-card { max-width: 280px; }
+    .polaroid-text { font-size: 22px; }
+    .star-decoration { right: 15%; top: -10px; }
+    .details-title { font-size: 38px; }
+    .details-text { font-size: 20px; padding: 0 10px; }
+    .date-text { font-size: 44px; }
+    .date-container { width: 260px; height: 110px; }
+    .program-title { font-size: 38px; margin-bottom: 30px; }
+    .program-item { flex-direction: column; align-items: center; margin-bottom: 40px; }
+    .item-time { flex-basis: auto; text-align: center; margin-right: 0; margin-bottom: 10px; font-size: 28px; }
+    .item-star { margin-right: 0; margin-bottom: 15px; width: 35px; height: 35px; }
+    .item-content { text-align: center; width: 100%; }
+    .event-name { font-size: 28px; }
+    .event-desc { font-size: 18px; line-height: 1.3; }.location-title { font-size: 38px; }
+    .location-info { font-size: 20px; }
+    .map-button { font-size: 18px; padding: 12px 30px; }
+    .dress-code-title { font-size: 38px; }
+    .dress-code-text { font-size: 20px; }
+    .color-swatch { width: 45px; height: 45px; margin: 0 5px; }
+    .dress-code-photo-frame { max-width: 280px; }.wishes-title { font-size: 38px; }
+    .wishes-text { font-size: 20px; padding: 0 10px; }
+    .wishes-icon { width: 55px; margin-bottom: 20px; }
+    .wishes-separator { margin: 25px 0; width: 90%; }
+    .rsvp-title { font-size: 38px; }
+    .rsvp-text { font-size: 20px; }
+    .input-label { font-size: 22px; }
+    .radio-label, .checkbox-label, input[type="text"] { font-size: 20px; }
+    .submit-button { font-size: 20px; padding: 12px 40px; }
+    .contacts-title { font-size: 38px; }
+    /* Сдвигаем самолетик чуть ближе на маленьких экранах */
+    .contacts-icon { width: 60px; right: -50px; top: -5px; } 
+    .contacts-text { font-size: 20px; }
+    .contacts-phone { font-size: 24px; }
+    .final-title { font-size: 38px; margin-bottom: 15px; }
+    .final-heart { width: 100px; margin-bottom: 30px; }
+    .final-card { max-width: 280px; }
+    .wishes-button {
+        font-size: 20px;
+        padding: 12px 30px;
+        margin-top: 20px;
+    }
+}
